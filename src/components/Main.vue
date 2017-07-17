@@ -1,5 +1,7 @@
 <template>
-  <div class="art-main">kir</div>
+  <div>
+    <router-view></router-view>
+  </div>
 </template>
 
 <script>

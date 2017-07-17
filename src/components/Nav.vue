@@ -1,7 +1,7 @@
 <template>
   <div class="art-nav">
     <nav>
-      <p>Home</p>
+      <router-link to="home">Home</router-link>
     </nav>
   </div>
 </template>

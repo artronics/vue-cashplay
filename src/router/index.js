@@ -15,12 +15,15 @@ export default new Router({
     {
       path: '/app',
       name: 'App',
-      component: Cashplay
-    },
-    {
-      path: '/app/home',
-      name: 'Home',
-      component: Home
+      components: {
+        app: Cashplay
+      },
+      children: [
+        {
+          path: 'home',
+          component: Home
+        }
+      ]
     }
   ]
 })
