@@ -2,12 +2,9 @@
   <art-layout>
     <art-header slot="header"></art-header>
 
-    <div class="row">
-      <art-nav class="col-3"></art-nav>
-      <art-main class="col-9"></art-main>
-    </div>
+    <art-nav></art-nav>
+    <art-main></art-main>
 
-    <p slot="footer">footer</p>
   </art-layout>
 </template>
 
@@ -34,8 +31,4 @@
 </script>
 
 <style>
-  .container-fluid{
-    margin: 0;
-    padding:0;
-  }
 </style>

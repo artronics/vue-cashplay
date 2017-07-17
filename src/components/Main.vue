@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="art-main content-wrapper">
     <router-view></router-view>
   </div>
 </template>
@@ -18,5 +18,6 @@
 <style>
  .art-main{
    background-color: tomato;
+   width: 100%;
  }
 </style>

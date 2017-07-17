@@ -1,5 +1,5 @@
 <template>
-  <div class="art-nav">
+  <div class="art-nav content-wrapper">
     <nav>
       <router-link to="home">Home</router-link>
     </nav>
@@ -20,5 +20,6 @@
 <style>
   .art-nav {
     background-color: burlywood;
+    width: 20%;
   }
 </style>

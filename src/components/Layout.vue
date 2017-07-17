@@ -1,14 +1,11 @@
 <template>
-  <div class="art-layout container-fluid">
+  <div class="art-layout container-fluid d-flex flex-column">
     <header>
       <slot name="header"></slot>
     </header>
-    <main>
+    <main class="d-flex flex-row main-content">
       <slot></slot>
     </main>
-    <footer>
-      <slot name="footer"></slot>
-    </footer>
   </div>
 </template>
 
@@ -26,5 +23,15 @@
 <style>
   .art-layout{
     background-color: red;
+    height: 100vh;
+  }
+
+  .container-fluid {
+    margin: 0;
+    padding: 0;
+  }
+
+  .main-content {
+    height: 100%;
   }
 </style>
