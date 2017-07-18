@@ -2,7 +2,7 @@
   <div class="art-nav content-wrapper">
     <nav>
       <router-link to="home">Home</router-link>
-      <router-link to="setting/user">New User</router-link>
+      <router-link to="user">New User</router-link>
     </nav>
   </div>
 </template>
