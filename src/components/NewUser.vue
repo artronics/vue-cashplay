@@ -1,11 +1,10 @@
 <template>
   <form action="">
-    <art-input art-name="First Name" :art-required="true"></art-input>
+    <art-input art-name="First Name" v-model="user.firstName" :art-required="true"></art-input>
     <div class="form-group">
       <label for="exampleInputPassword1">Password</label>
       <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
     </div>
-    s
   </form>
 </template>
 
@@ -18,7 +17,9 @@
     },
     data: function () {
       return {
-        msg: 'new user'
+        user: {
+          firstName: ''
+        }
       }
     }
   }

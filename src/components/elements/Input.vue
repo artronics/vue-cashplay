@@ -4,7 +4,7 @@
     <component is="input" :type="artType ? artType : 'text'"
                class="form-control" :class="{'form-control-danger':hasError}" :id=artName
                :aria-describedby="artName + 'Help'" :placeholder="artName"
-               @input="validate" @blur="checkRequired" v-model="input">
+               @input.trim="updateValue($event.target.value)" @blur="checkRequired">
     </component>
     <small v-if="artHelp" :id="artName + 'Help'" class="form-text text-muted">{{artHelp}}</small>
     <div class="form-control-feedback" v-if="hasError">{{errorMsg}}</div>
@@ -13,7 +13,7 @@
 
 <script>
   export default {
-    props: ['artName', 'artHelp', 'artRequired', 'artValidator', 'artRequired', 'artType'],
+    props: ['value', 'artName', 'artHelp', 'artRequired', 'artValidator', 'artRequired', 'artType'],
     data: function () {
       return {
         input: '',
@@ -22,10 +22,16 @@
       }
     },
     methods: {
+      updateValue: function (value) {
+        this.input = value
+        this.validate(value)
+        this.$emit('input', value)
+      },
       validate: function (input) {
-        if (this.artValidator === null) {
+        if (!this.artValidator) {
           this.hasError = false
           this.errorMsg = ''
+          return
         }
         var msg = this.artValidator(input)
         if (msg !== '' || msg != null) {
@@ -47,7 +53,4 @@
 </script>
 
 <style>
-  .errors {
-    list-style: none;
-  }
 </style>
