@@ -1,9 +1,11 @@
 <template>
   <div class="form-group" :class="{'has-danger':hasError}">
     <label :for=artName>{{artName}}</label>
-    <input type="email" class="form-control" :class="{'form-control-danger':hasError}" :id=artName
-           :aria-describedby="artName + 'Help'" :placeholder="artName"
-           @input="validate" @blur="checkRequired" v-model="input">
+    <component is="input" :type="artType ? artType : 'text'"
+               class="form-control" :class="{'form-control-danger':hasError}" :id=artName
+               :aria-describedby="artName + 'Help'" :placeholder="artName"
+               @input="validate" @blur="checkRequired" v-model="input">
+    </component>
     <small v-if="artHelp" :id="artName + 'Help'" class="form-text text-muted">{{artHelp}}</small>
     <div class="form-control-feedback" v-if="hasError">{{errorMsg}}</div>
   </div>
@@ -11,7 +13,7 @@
 
 <script>
   export default {
-    props: ['artName', 'artHelp', 'artRequired', 'artValidator', 'artRequired'],
+    props: ['artName', 'artHelp', 'artRequired', 'artValidator', 'artRequired', 'artType'],
     data: function () {
       return {
         input: '',
