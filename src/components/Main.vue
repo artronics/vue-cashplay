@@ -17,7 +17,8 @@
 
 <style>
  .art-main{
-   background-color: tomato;
+   background-color: grey;
    width: 100%;
+   padding: 10px;
  }
 </style>

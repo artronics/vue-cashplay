@@ -2,6 +2,7 @@
   <div class="art-nav content-wrapper">
     <nav>
       <router-link to="home">Home</router-link>
+      <router-link to="setting/user">New User</router-link>
     </nav>
   </div>
 </template>
@@ -21,5 +22,9 @@
   .art-nav {
     background-color: burlywood;
     width: 20%;
+  }
+
+  .art-nav a {
+    display: block;
   }
 </style>
